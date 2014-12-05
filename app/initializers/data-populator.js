@@ -9,7 +9,7 @@ export default {
 
     var issues = store.find('issue');
     issues.then(function() {
-      if (issues.get('length') == 0) {
+      if (issues.get('length') === 0) {
         var issue = store.createRecord('issue', {title: 'An issue'});
 
         issue.save().then(function() {
@@ -26,4 +26,4 @@ export default {
       }
     });
   }
-}
+};
