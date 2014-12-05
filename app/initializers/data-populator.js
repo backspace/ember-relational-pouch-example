@@ -14,10 +14,11 @@ export default {
 
         issue.save().then(function() {
           var feature = store.createRecord('feature', {title: 'A feature'});
-          issue.get('features').pushObject(feature);
-          feature.save();
-          issue.save().then(function() {
-            application.advanceReadiness();
+          feature.save().then(function() {
+            issue.get('features').pushObject(feature);
+            issue.save().then(function() {
+              application.advanceReadiness();
+            });
           });
         });
       }
