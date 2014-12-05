@@ -1,3 +1,11 @@
-<h2 id='title'>Welcome to Ember.js</h2>
+<h2 id='title'>Issues</h2>
+
+<ul>
+  {{#each issue in model}}
+    <li>
+      {{issue.title}} (# of features: {{issue.features.length}})
+    </li>
+  {{/each}}
+</ul>
 
 {{outlet}}
