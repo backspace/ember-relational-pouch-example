@@ -8,6 +8,12 @@ export default Ember.Route.extend({
   actions: {
     loadFeatures: function() {
       this.store.find('feature');
+    },
+
+    clearDatabase: function() {
+      this.container.lookup('adapter:application').db.destroy(function() {
+        window.location.reload();
+      });
     }
   }
 });
